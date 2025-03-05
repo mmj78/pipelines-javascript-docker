@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mmjpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mmjpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mmjpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mmjpipelinesjavascriptdocker 
+          image: singacontainerregistry.azurecr.io/mmjpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
